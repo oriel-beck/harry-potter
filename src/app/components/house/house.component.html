@@ -1,0 +1,5 @@
+<mat-card [routerLink]="[house.name, 'info']" >
+  <mat-card-title>{{house.name}} House</mat-card-title>
+  <mat-card-footer>Founded by {{house.founder}}</mat-card-footer>
+  <img mat-card-image [src]="house.image" [alt]="house.name"/>
+</mat-card>

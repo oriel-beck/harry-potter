@@ -1,0 +1,6 @@
+<mat-toolbar color="warn">
+  <span>House of {{house$ | async}}</span>
+  <span class="spacer"></span>
+  <button mat-raised-button color="primary" (click)="navigateToMainPage()">Close</button>
+  <button mat-raised-button color="primary" (click)="navigateToStudents()">{{toTitle(navigateTo)}}</button>
+</mat-toolbar>

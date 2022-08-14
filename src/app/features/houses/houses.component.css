@@ -1,0 +1,11 @@
+.houses {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+@media (max-width: 970px) {
+  :host {
+    flex-direction: column;
+  }
+}

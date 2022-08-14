@@ -1,0 +1,8 @@
+<mat-list>
+  <app-sub-header navigateTo="students"></app-sub-header>
+  <div mat-subheader>Traits</div>
+  <mat-list-item *ngFor="let trait of house.traits">{{trait.name}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <div mat-subheader>Heads</div>
+  <mat-list-item *ngFor="let head of house.heads">{{head.firstName}} {{head.lastName}}</mat-list-item>
+</mat-list>

@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>{{student.name}}</mat-card-title>
+  <mat-card-subtitle>{{student.ancestry}} {{student.hogwartsStaff ? 'Teacher' : 'Student'}}</mat-card-subtitle>
+  <img *ngIf="student.image" mat-card-image [src]="student.image" [alt]="student.name">
+  <mat-card-content>
+    <p *ngIf="student.dateOfBirth">Born in {{student.dateOfBirth}}</p>
+    <p *ngIf="student.patronus">Patronus: {{student.patronus}}</p>
+    <p *ngIf="student.eyeColor">Eye Color: {{student.eyeColor}}</p>
+    <p *ngIf="student.hairColor">Hair Color: {{student.hairColor}}</p>
+    <p *ngIf="student.actor">Actor: {{student.actor}}</p>
+    <ng-container *ngIf="student.wand.core">
+      <mat-list>
+        <div mat-subheader>Wand Details</div>
+        <mat-list-item>Core: {{student.wand.core}}</mat-list-item>
+        <mat-list-item>Wood: {{student.wand.wood}}</mat-list-item>
+        <mat-list-item>Length: {{student.wand.length}}"</mat-list-item>
+      </mat-list>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

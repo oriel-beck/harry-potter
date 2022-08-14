@@ -1,0 +1,5 @@
+<mat-toolbar color="primary" ><span>Hogwarts Houses</span></mat-toolbar>
+<div class="houses">
+  <app-house *ngFor="let house of houses$ | async" [house]="house"></app-house>
+</div>
+<router-outlet></router-outlet>
