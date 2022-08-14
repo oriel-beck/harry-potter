@@ -22,9 +22,6 @@ import { SubHeaderModule } from '../../components/sub-header/sub-header.module';
       {
         path: '',
         component: HousesComponent,
-        resolve: {
-          houses: HouseResolverService,
-        },
         children: [
           {
             path: ':house/students',

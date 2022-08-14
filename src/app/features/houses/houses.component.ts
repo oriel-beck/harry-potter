@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WizardWorldService } from '../../services/wizard-world.service';
 import { House } from '../../models/house.model';
-import { Observable, of } from 'rxjs';
+import { Observable, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-houses',

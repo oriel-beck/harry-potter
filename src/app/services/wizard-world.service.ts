@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { House } from '../models/house.model';
-import { Observable } from 'rxjs';
+import { Observable, shareReplay, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -13,9 +13,5 @@ export class WizardWorldService {
 
   getHouses(): Observable<House[]> {
     return this.api.get<House[]>(`${this.baseUrl}/Houses`);
-  }
-
-  getHouse(id: string): Observable<House> {
-    return this.api.get<House>(`${this.baseUrl}/Houses/${id}`);
   }
 }

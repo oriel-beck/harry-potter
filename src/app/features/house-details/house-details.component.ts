@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { filter, from, mergeMap, Observable, of } from 'rxjs';
+import { filter, find, from, map, mergeMap, Observable, of, tap } from 'rxjs';
 import { House } from '../../models/house.model';
 import { WizardWorldService } from '../../services/wizard-world.service';
 
@@ -11,13 +11,15 @@ import { WizardWorldService } from '../../services/wizard-world.service';
 })
 export class HouseDetailsComponent {
   house$: Observable<House> = of({} as House);
-  constructor(
-    private router: ActivatedRoute,
-    private houseService: WizardWorldService
-  ) {
-    this.house$ = this.houseService.getHouses().pipe(
-      mergeMap((items) => from(items)),
-      filter((item) => item.name === this.router.snapshot.paramMap.get('house'))
+  constructor(private router: ActivatedRoute) {
+    this.house$ = this.router.data.pipe(
+      map(
+        (data) =>
+          (data as { houses: House[] }).houses.find(
+            (house: House) =>
+              house.name === this.router.snapshot.paramMap.get('house')
+          )!
+      )
     );
   }
 }
