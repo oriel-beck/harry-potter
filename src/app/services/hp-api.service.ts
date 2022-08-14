@@ -7,7 +7,7 @@ import { filter, from, Observable, switchMap, toArray } from 'rxjs';
   providedIn: 'root',
 })
 export class HpApiService {
-  private baseUrl = 'http://hp-api.herokuapp.com/api/characters';
+  private baseUrl = 'https://hp-api.herokuapp.com/api/characters';
   constructor(private api: ApiService) {}
 
   getHouseCharacters(house: string): Observable<Student[]> {
