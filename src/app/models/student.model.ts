@@ -8,8 +8,8 @@ export interface Student {
   yearOfBirth: number;
   wizard: boolean;
   ancestry: string;
-  eyeColor: string;
-  hairColor: string;
+  eyeColour: string;
+  hairColour: string;
   wand: Wand;
   patronus: string;
   hogwartsStudent: boolean;

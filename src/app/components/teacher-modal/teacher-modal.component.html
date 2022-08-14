@@ -3,18 +3,21 @@
   <mat-card-subtitle>{{student.ancestry}} {{student.hogwartsStaff ? 'Teacher' : 'Student'}}</mat-card-subtitle>
   <img *ngIf="student.image" mat-card-image [src]="student.image" [alt]="student.name">
   <mat-card-content>
-    <p *ngIf="student.dateOfBirth">Born in {{student.dateOfBirth}}</p>
+    <p *ngIf="student.dateOfBirth">Born in {{student.dateOfBirth | date}}</p>
     <p *ngIf="student.patronus">Patronus: {{student.patronus}}</p>
-    <p *ngIf="student.eyeColor">Eye Color: {{student.eyeColor}}</p>
-    <p *ngIf="student.hairColor">Hair Color: {{student.hairColor}}</p>
+    <p *ngIf="student.eyeColour">Eye Color: {{student.eyeColour}}</p>
+    <p *ngIf="student.hairColour">Hair Color: {{student.hairColour}}</p>
     <p *ngIf="student.actor">Actor: {{student.actor}}</p>
-    <ng-container *ngIf="student.wand.core">
+    <ng-container *ngIf="student.wand.core || student.wand.length || student.wand.wood; else noWand">
       <mat-list>
         <div mat-subheader>Wand Details</div>
-        <mat-list-item>Core: {{student.wand.core}}</mat-list-item>
-        <mat-list-item>Wood: {{student.wand.wood}}</mat-list-item>
-        <mat-list-item>Length: {{student.wand.length}}"</mat-list-item>
+        <mat-list-item>Core: {{student.wand.core || 'Unknown'}}</mat-list-item>
+        <mat-list-item>Wood: {{student.wand.wood || 'Unknown'}}</mat-list-item>
+        <mat-list-item>Length: {{student.wand.length || 'Unknown'}}"</mat-list-item>
       </mat-list>
     </ng-container>
+    <ng-template #noWand>
+      <p>Wand: Unknown</p>
+    </ng-template>
   </mat-card-content>
 </mat-card>
