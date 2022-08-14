@@ -3,11 +3,11 @@
   <div mat-subheader>Staff</div>
   <mat-list-item *ngFor="let teacher of staff" (click)="openDialog(teacher)">
     <img *ngIf="teacher.image as image" matListAvatar [src]="image" [alt]="teacher">
-    <h3>{{teacher.name}}</h3>
+    <span>{{teacher.name}}</span>
   </mat-list-item>
   <div mat-subheader>Students</div>
   <mat-list-item *ngFor="let student of students" (click)="openDialog(student)">
     <img *ngIf="student.image as image" matListAvatar [src]="image" [alt]="student">
-    <h3>{{student.name}}</h3>
+    <span>{{student.name}}</span>
   </mat-list-item>
 </mat-list>

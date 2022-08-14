@@ -1,0 +1,8 @@
+mat-list-item:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+img {
+  padding-right: 5px;
+}
